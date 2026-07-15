@@ -20,7 +20,11 @@ export default function RegionFilter({
   return (
     <Select
       value={value}
-      onValueChange={onChange}
+      onValueChange={(value) => {
+        if (value) {
+          onChange(value);
+        }
+      }}
     >
       <SelectTrigger className="h-12 rounded-xl">
         <SelectValue placeholder="Filter Region" />
@@ -31,8 +35,12 @@ export default function RegionFilter({
         <SelectItem value="Africa">Africa</SelectItem>
         <SelectItem value="Asia">Asia</SelectItem>
         <SelectItem value="Europe">Europe</SelectItem>
-        <SelectItem value="North America">North America</SelectItem>
-        <SelectItem value="South America">South America</SelectItem>
+        <SelectItem value="North America">
+          North America
+        </SelectItem>
+        <SelectItem value="South America">
+          South America
+        </SelectItem>
         <SelectItem value="Oceania">Oceania</SelectItem>
       </SelectContent>
     </Select>
